@@ -1,0 +1,24 @@
+name: General Question / Other
+description: Anything that doesn't fit a Data Issue or XMLTV Parsing Error report
+type: "Question"
+labels:
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Note: we can't accept requests to add channels, markets, or data beyond what our upstream provider supports.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What's going on?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Anything else that might help (optional)
+    validations:
+      required: false

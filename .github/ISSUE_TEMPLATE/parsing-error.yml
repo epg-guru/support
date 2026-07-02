@@ -1,0 +1,63 @@
+name: XMLTV Parsing Error
+description: Report that a downloadable XMLTV file is malformed or fails to parse
+type: "Parsing"
+labels:
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for problems with the downloadable XML file itself (malformed XML, encoding issues, parser errors). Not for guide data content, and not for issues with a website page.
+  - type: input
+    id: market
+    attributes:
+      label: Market (ISO3 country code)
+      description: The 3-letter ISO country code for the affected file
+      placeholder: e.g. USA, GBR, CAN
+    validations:
+      required: true
+  - type: dropdown
+    id: source-type
+    attributes:
+      label: Type
+      options:
+        - IPTV
+        - Standard
+        - ALL
+    validations:
+      required: true
+  - type: dropdown
+    id: day-range
+    attributes:
+      label: Day range
+      options:
+        - 3-day
+        - 7-day
+        - 14-day
+        - ALL
+    validations:
+      required: true
+  - type: input
+    id: parser
+    attributes:
+      label: Parser/tool used
+      description: What did you use to open or parse the file?
+      placeholder: e.g. xmltv, Plex, custom script
+    validations:
+      required: false
+  - type: textarea
+    id: error-output
+    attributes:
+      label: Error message/output
+      description: Paste the exact error or exception text from your parser/tool.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: xml-snippet
+    attributes:
+      label: XML snippet
+      description: Paste the offending portion of the XML file.
+      render: xml
+    validations:
+      required: true

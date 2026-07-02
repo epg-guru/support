@@ -1,0 +1,67 @@
+name: Data Issue
+description: Report incorrect or missing guide data (images, episode numbers, titles, etc.)
+type: "Data Issue"
+labels:
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Guide data comes from our upstream data provider. We can't directly fix upstream data errors or add channels/data that aren't supported. Please don't use this form to request new channels or data that aren't provided.
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue type
+      options:
+        - Missing image
+        - Wrong episode number
+        - Wrong title
+        - Wrong description
+        - Wrong air time
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: market
+    attributes:
+      label: Market (ISO3 country code)
+      description: The 3-letter ISO country code for the affected guide data
+      placeholder: e.g. USA, GBR, CAN
+    validations:
+      required: true
+  - type: dropdown
+    id: source-type
+    attributes:
+      label: Type
+      options:
+        - IPTV
+        - Standard
+        - ALL
+    validations:
+      required: true
+  - type: dropdown
+    id: day-range
+    attributes:
+      label: Day range
+      options:
+        - 3-day
+        - 7-day
+        - 14-day
+        - ALL
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Which channel, program, and air date/time is affected, and what's wrong with it?
+      placeholder: e.g. Channel 12 (ABC), "Show Name" airing 7/2 at 8pm, listed as episode 5 but should be episode 6
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot / attachment
+      description: Drag and drop a screenshot or file showing the incorrect listing, if you have one.
+    validations:
+      required: false
