@@ -24,9 +24,9 @@ body:
   - type: input
     id: market
     attributes:
-      label: Market (ISO3 country code)
-      description: The 3-letter ISO country code for the affected guide data
-      placeholder: e.g. USA, GBR, CAN
+      label: Market
+      description: Country code and/or Type
+      placeholder: United States, US FAST, etc
     validations:
       required: true
   - type: dropdown
