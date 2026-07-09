@@ -51,6 +51,14 @@ body:
     validations:
       required: true
   - type: textarea
+    id: channels
+    attributes:
+      label: Affected Channel(s)
+      description: Gracenote ID (gnid), and/or Channel ID of the affected channels
+      placeholder: ESPNHD(ESPNHD).us, 32645, etc
+    validations:
+      required: false
+  - type: textarea
     id: description
     attributes:
       label: Description
